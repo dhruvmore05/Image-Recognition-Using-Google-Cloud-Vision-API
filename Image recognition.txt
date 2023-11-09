@@ -1,0 +1,46 @@
+Image Recognition 
+
+The Google Cloud Vision API allows you to analyze images and extract information such as labels, text, landmarks, faces, and objects. To make a web application that uses the Google Cloud Vision API to recognize herbal plants and give back detailed information, you can follow these steps:
+1.	Create a Google Cloud project and enable the Vision API. You will also need to create a service account and download a JSON key file for authentication. You can find the instructions on how to do this here.
+2.	Install the Google Cloud client library for Python. You can use the pip command to install the library: pip install --upgrade google-cloud-vision.
+3.	Write a Python script that uses the Vision API to perform label detection on an image of a herbal plant. You can use the code example from this tutorial as a reference. You will need to modify the code to use your JSON key file and the image URL or path. The code will print out a list of labels and their scores for the image. For example, if you use an image of a mint plant, you might get something like this:
+Labels:
+mint (0.97)
+plant (0.96)
+herb (0.95)
+leaf (0.93)
+green (0.91)
+
+4.	Write a Python script that uses the Vision API to perform web detection on the same image of a herbal plant. You can use the code example from this tutorial as a reference. You will need to modify the code to use your JSON key file and the image URL or path. The code will print out a list of web entities and their scores, as well as a list of matching images and their URLs. For example, if you use an image of a mint plant, you might get something like this:
+Web entities:
+Mentha (0.87)
+Mint (0.86)
+Herb (0.84)
+Plant (0.82)
+Leaf (0.81)
+
+Matching images:
+1 (0.99)
+2 (0.98)
+3 (0.97)
+4:max_bytes(150000):strip_icc()/mint-plant-21327332-58a6c8813df78c345b33c0e8.jpg) (0.96)
+5 (0.95)
+
+5.	Write a Python script that uses the Vision API to perform text detection on the same image of a herbal plant. You can use the code example from this tutorial as a reference. You will need to modify the code to use your JSON key file and the image URL or path. The code will print out the text detected in the image, as well as the bounding box coordinates for each word. For example, if you use an image of a mint plant with a label, you might get something like this:
+Text:
+Mint
+Fresh
+Organic
+
+Bounding boxes:
+Mint: [(0.11, 0.12), (0.23, 0.12), (0.23, 0.16), (0.11, 0.16)]
+Fresh: [(0.25, 0.12), (0.37, 0.12), (0.37, 0.16), (0.25, 0.16)]
+Organic: [(0.39, 0.12), (0.53, 0.12), (0.53, 0.16), (0.39, 0.16)]
+
+6.	Write a Python script that uses the requests library to fetch detailed information about the herbal plant from a reliable source, such as Wikipedia. You can use the label or the web entity with the highest score as the query term. You will need to parse the HTML response and extract the relevant information, such as the scientific name, the common name, the description, the uses, the benefits, and the side effects of the plant. You can use the BeautifulSoup library to help you with the HTML parsing. You can find an example of how to do this here.
+7.	Write a Python script that uses the Flask framework to create a web application that displays the image of the herbal plant, the labels, the web entities, the matching images, the text, and the detailed information in a user-friendly interface. You can use the code example from this tutorial as a reference. You will need to modify the code to use your JSON key file and the Vision API functions that you wrote in the previous steps. You will also need to create a HTML template that uses Bootstrap to style the web page. You can find an example of how to do this here.
+8.	Test your web application locally by running the Flask script and opening the URL http://127.0.0.1:5000/ in your browser. You should see something like this:
+9.	Deploy your web application to a cloud platform, such as Google App Engine, Heroku, or AWS. You will need to follow the instructions for each platform to set up your environment, configure your dependencies, and upload your files. You can find some examples of how to do this here, [here], and [here].
+10.	Enjoy your web application that uses the Google Cloud Vision API to recognize herbal plants and give back detailed information. You can share your web application URL with others and try different images of herbal plants. Have fun!
+ 
+
